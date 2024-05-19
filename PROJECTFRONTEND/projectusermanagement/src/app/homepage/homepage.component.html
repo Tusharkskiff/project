@@ -1,1 +1,24 @@
-<p>homepage works!</p>
+<nav>
+<div class="logo">
+    <span>ItsOwner</span>
+</div>
+<div class="menu">
+    <a routerLink="/"(click)="onHomeClick()">home</a>
+    <a routerLink="/contact"(click)="onUserSelect('contact')">contact</a>
+</div>
+<mat-form-field style="width: 10%;height: 87%;position: relative;top: 20px;margin-right:40px;">
+    <mat-select style="position: relative;bottom: 10px;"placeholder="user"(selectionchange)="onUserSelect($event.value)">
+        <mat-option *ngFor="let user of users"(click)="onUserSelect(user.value)"[value]="user.value">
+            {{user.viewValue}}
+        </mat-option>   
+    </mat-select>
+</mat-form-field>
+</nav>
+<section class="content-container">
+
+</section>
+<footer id="contact-us" *bgIf="show contact details">
+    <p> contact details :</p>
+    <p>Email: goku@gmail.com</p>
+    <p>phone:+1 (123) 456-7890</p>
+</footer>
